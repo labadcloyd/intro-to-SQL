@@ -1,8 +1,8 @@
 -- creating a table;
 CREATE TABLE student (
-    student_id      INT PRIMARY KEY,
-    name            VARCHAR(20),
-    major           VARCHAR(20)
+    student_id      INT PRIMARY KEY AUTO_INCREMENT,
+    name            VARCHAR(20) UNIQUE NOT NULL,
+    major           VARCHAR(20) DEFAULT 'undecided'
 );
 -- quering a table;
 DESCRIBE student;
@@ -14,5 +14,6 @@ ALTER TABLE student ADD (
     age     INT
 );
 ALTER TABLE student MODIFY COLUMN student_id INT AUTO_INCREMENT;
+ALTER TABLE student MODIFY COLUMN name VARCHAR(20) UNIQUE;
 -- deleting a column;
 ALTER TABLE student DROP COLUMN age;
